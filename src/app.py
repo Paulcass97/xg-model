@@ -16,7 +16,8 @@ st.set_page_config(
 # ── Load model ───────────────────────────────────────────────
 @st.cache_resource
 def load_model():
-    with open(r'C:\Users\paulc\OneDrive\Projects\xg-model\models\xg_model.pkl', 'rb') as f:
+    model_path = os.path.join(os.path.dirname(__file__), '..', 'models', 'xg_model.pkl')
+    with open(model_path, 'rb') as f:
         return pickle.load(f)
 
 model = load_model()
